@@ -1,3 +1,7 @@
 .conteiner {
     font-family: 'Roboto', sans-serif;
 }
+
+.check-label {
+    display: block;
+}
