@@ -1,38 +1,35 @@
-/////// Задача 1 /////////
+////// Задача 1 ///////
 
-const button = document.querySelector('.b-1');
-const output = document.getElementById('out-1');
+const output = document.querySelector('.out');
 
-button.onclick = () => {
-    let out = '';
-    for (let i = 1; i <= 50; i++) {
-        out += i + ' ';
+for (i = 0; i < 3; i++) {
+    let z = '';
+    for (k = 0; k < 3; k++) {
+        z += "*";
     }
-    output.innerHTML = out;
+    output.innerHTML += z + "_";
 };
 
-/////// Задача 2 /////////
+////// Задача 2 ///////
 
-const butt = document.querySelector('.b-2');
-const out = document.getElementById('out-2');
+const output1 = document.querySelector('.out1');
 
-butt.onclick = () => {
-    let out2 = '';
-    for (let i = 2; i <= 122; i += 2) {
-        out2 += i + ' ';
+for (i = 1; i <= 3; i++) {
+    let z = '';
+    for (k = 0; k < 3; k++) {
+        z += `*_`;
     }
-    out.innerHTML = out2;
+    output1.innerHTML += `${i} <br> ${z} <br>`;
 };
 
-/////// Задача 3 /////////
+////// Задача 3 ///////
 
-const but = document.querySelector('.b-3');
-const outt = document.getElementById('out-3');
+const output2 = document.querySelector('.out2');
 
-but.onclick = () => {
-    let out2 = '';
-    for (let i = 25; i >= 7; i--) {
-        out2 += i + ' ';
+for (i = 0; i <= 3; i++) {
+    let z = '';
+    for (k = 0; k < 3; k++) {
+        z += `*_`;
     }
-    outt.innerHTML = out2;
+    output2.innerHTML += `${z} <br>`;
 };
