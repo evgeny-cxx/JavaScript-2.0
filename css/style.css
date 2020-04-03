@@ -1,6 +1,7 @@
 .conteiner {
     font-family: 'Roboto', sans-serif;
     display: block;
+    text-align: center;
 }
 
 .one {
@@ -15,6 +16,7 @@
     border: 2px solid red;
 }
 
-.out-1 {
-    background: salmon;
+.out {
+
+    font-family: monospace;
 }
