@@ -1,59 +1,66 @@
-// let a = -16;
+const one = document.querySelector(".one");
 
-// if (a > 9) {
-//     console.log('Yes!');
-// } else {
-//     console.log('else');
-// }
+one.style.width = "100px";
+one.style.paddingBottom = "80px";
 
-const button = document.querySelector("button");
-const input = document.querySelector(".age");
+one.classList.add("two", "three");
+one.classList.remove("three");
 
-button.onclick = () => {
-  let num = +input.value;
-  console.log(num);
-  num >= 18 ? console.log("ACESS") : console.log("NO EXIT");
+const toggle = document.querySelector(".toggle");
 
-  //   if (num >= 18) {
-  //     console.log("Yes!");
-  //   } else {
-  //     console.log("No!");
-  //   }
+toggle.onclick = function() {
+  this.classList.toggle("three");
+};
+const gas = document.querySelectorAll(".gas");
+for (i = 0; i < gas.length; i++) {
+  gas[i].onclick = function() {
+    let gallons = document.querySelector(".gallons").value;
+    let amount = this.getAttribute("data");
+    let out = document.querySelector(".out");
+    out.textContent = amount * gallons;
+  };
+}
 
-  switch (num) {
-    case 18:
-      console.log("18");
-      break;
-    case 16:
-      console.log("16");
-      break;
-  }
-  //num = "";
+let a = document.createElement("div");
+
+a.innerHTML = "hello!";
+a.classList.add("one");
+a.onclick = function() {
+  alert("Hello");
 };
 
-/////// Задача 1 ////////
+document.querySelector(".test").appendChild(a);
 
-const but = document.querySelector(".b-1");
-const inp = document.querySelector(".i-1");
-const out = document.getElementById("out-1");
+////// Задача 1 ////////
 
-but.onclick = () => {
-  let num = inp.value;
-  num == 4 ? (out.innerHTML = "true") : (out.innerHTML = "false");
-  num = "";
-};
+const button = document.querySelector(".b-1");
+const out = document.querySelector(".out-1");
 
-/////// Задача 2 ////////
+function f1() {
+  out.style.width = "200px";
+  out.style.heigth = "40px";
+}
 
-const but2 = document.querySelector(".b-2");
-const out2 = document.getElementById("out-2");
+button.onclick = f1;
 
-but2.onclick = () => {
-  let a21 = +document.querySelector(".i-21").value;
-  let a22 = +document.querySelector(".i-22").value;
-  console.log(a21 + "  " + a22);
-  a21 < a22 ? (out2.innerHTML = a22) : (out2.innerHTML = a21);
-};
+////// Задача 2 ////////
 
+const button2 = document.querySelector(".b-2");
+const out2 = document.querySelector(".out-2");
 
-/////// Задача 3 ////////
+function f2() {
+  out2.classList.add("bg-2");
+}
+
+button2.onclick = f2;
+
+////// Задача 3 ////////
+
+const button3 = document.querySelector(".b-3");
+const out3 = document.querySelector(".out-3");
+
+function f3() {
+  out3.classList.remove("bg-3");
+}
+
+button3.onclick = f3;

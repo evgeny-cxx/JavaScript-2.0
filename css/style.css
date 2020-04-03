@@ -1,7 +1,20 @@
 .conteiner {
     font-family: 'Roboto', sans-serif;
+    display: block;
 }
 
-.check-label {
-    display: block;
+.one {
+    background: yellow;
+}
+
+.two {
+    background: greenyellow;
+}
+
+.three {
+    border: 2px solid red;
+}
+
+.out-1 {
+    background: salmon;
 }
