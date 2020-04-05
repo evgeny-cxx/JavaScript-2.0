@@ -48,7 +48,6 @@ document.querySelector(".but-arr").onclick = () => {
 };
 
 ///// Задача 1 /////
-//let ar = [1, 2, 3, 55, 7];
 
 const input = document.querySelector(".in-1");
 const button = document.querySelector(".b-1");
