@@ -1,71 +1,72 @@
-const a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const b = ["a", "b", "c", "d", "e", "f"];
-console.log(a);
-console.log("shift=  " + a.shift("a"));
+const a = [1, 2, 3];
+const b = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
 
-console.log(b);
-console.log(a.length);
-console.log(a.push(10, 11, 12));
-console.log(a);
+//console.log(b);
 
-console.log(b.push("e", "j", "g"));
-console.log(b);
+// for (let i = 0; i < b.length; i++) {
+//   c = b[i];
+//   for (let k = c.length - 1; k >= 0; k--) {
+//     console.log(c[k]);
+//   }
+// }
+let out = "";
 
-console.log(b.pop());
-console.log(b.pop());
+for (let i = 0; i < b.length; i++) {
+  out += "<br>";
+  for (let k = 0; k < b[i].length; k++) {
+    // console.log(b[i][k]);
+    out += b[i][k] + " ";
+  }
+}
+document.querySelector(".out").innerHTML = out;
+/////////////////
 
-delete a[3];
-console.log(a);
-a.splice(3, 4, "g");
-console.log(a);
+let d = ["X", 0, 0, 0, 0, 0];
+let k = 0;
+let j = d.length - 1;
+document.querySelector(".out-arr").innerHTML = d.join(" ");
 
-/////// Задача 1 ///////
-
-const d1 = [33, "best", 66, "best"];
-const button1 = document.querySelector(".b-1");
-const out1 = document.querySelector(".out-1");
-const input1 = document.querySelector(".i-1");
-
-const showArr = (arr, out) => {
-  out.innerHTML = arr;
+document.querySelector(".but-arr").onclick = () => {
+  if (k < j) {
+    d[k] = 0;
+    d[k + 1] = "X";
+    k++;
+  } else {
+    d[j] = 0;
+    d[j - 1] = "X";
+    j--;
+  }
+  if (j == 0) {
+    k = 0;
+    j = d.length - 1;
+  }
+  document.querySelector(".out-arr").innerHTML = d.join(" ");
 };
 
+///// Задача 1 /////
+//let ar = [1, 2, 3, 55, 7];
+
+const input = document.querySelector(".in-1");
+const button = document.querySelector(".b-1");
+const output = document.querySelector(".out-1");
+
+function isNum(element, index, arr) {
+  if (element == 55) {
+    return element;
+  } else {
+    return false;
+  }
+}
+
 function f1() {
-  d1.push(input1.value);
-  showArr(d1, out1);
+  const str = input.value;
+  const arr = str.split(",");
+  output.innerHTML = arr.find(isNum);
+  console.log(arr.find(isNum));
 }
 
-button1.onclick = f1;
-
-/////// Задача 2 ///////
-
-const button2 = document.querySelector(".b-2");
-const out2 = document.querySelector(".out-2");
-function f2() {
-  d1.pop();
-  showArr(d1, out2);
-}
-
-button2.onclick = f2;
-
-/////// Задача 3 ///////
-const input3 = document.querySelector(".i-3");
-const button3 = document.querySelector(".b-3");
-const out3 = document.querySelector(".out-3");
-function f3() {
-  d1.unshift(input3.value);
-  showArr(d1, out3);
-}
-
-button3.onclick = f3;
-
-/////// Задача 4 ///////
-
-const button4 = document.querySelector(".b-4");
-const out4 = document.querySelector(".out-4");
-function f4() {
-  d1.shift();
-  showArr(d1, out4);
-}
-
-button4.onclick = f4;
+button.onclick = f1;
