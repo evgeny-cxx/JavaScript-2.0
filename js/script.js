@@ -1,74 +1,71 @@
-const out = document.querySelector(".out");
+const a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const b = ["a", "b", "c", "d", "e", "f"];
+console.log(a);
+console.log("shift=  " + a.shift("a"));
 
-let p = 0;
-let flag = 3;
-let str = "";
+console.log(b);
+console.log(a.length);
+console.log(a.push(10, 11, 12));
+console.log(a);
 
-while (p < 4) {
-  let p1 = 0;
-  while (p1 < 4) {
-    if (p1 < flag) {
-      str += "";
-    } else {
-      str += "*";
-    }
-    p1++;
-  }
-  flag--;
-  str += "<br>";
-  p++;
-}
+console.log(b.push("e", "j", "g"));
+console.log(b);
 
-out.innerHTML = str;
+console.log(b.pop());
+console.log(b.pop());
 
-///// Задача 1 ///////
+delete a[3];
+console.log(a);
+a.splice(3, 4, "g");
+console.log(a);
+
+/////// Задача 1 ///////
+
+const d1 = [33, "best", 66, "best"];
+const button1 = document.querySelector(".b-1");
 const out1 = document.querySelector(".out-1");
-const button = document.querySelector(".b-1");
+const input1 = document.querySelector(".i-1");
 
-function t1() {
-  let x = 0;
-  let str = "";
-  while (x <= 50) {
-    str += x + " ";
-    x++;
-  }
-  console.log(str);
-  out1.innerHTML = str;
+const showArr = (arr, out) => {
+  out.innerHTML = arr;
+};
+
+function f1() {
+  d1.push(input1.value);
+  showArr(d1, out1);
 }
 
-button.onclick = t1;
+button1.onclick = f1;
 
-///// Задача 2 ///////
-const out2 = document.querySelector(".out-2");
+/////// Задача 2 ///////
+
 const button2 = document.querySelector(".b-2");
-
-function t2() {
-  let x = 0;
-  let str = "";
-  while (x <= 122) {
-    str += x + " ";
-    x += 2;
-  }
-  console.log(str);
-  out2.innerHTML = str;
+const out2 = document.querySelector(".out-2");
+function f2() {
+  d1.pop();
+  showArr(d1, out2);
 }
 
-button2.onclick = t2;
+button2.onclick = f2;
 
-///// Задача 3 ///////
-
-const out3 = document.querySelector(".out-3");
+/////// Задача 3 ///////
+const input3 = document.querySelector(".i-3");
 const button3 = document.querySelector(".b-3");
-
-function t3() {
-  let x = 25;
-  let str = "";
-  while (x >= 7) {
-    str += x + " ";
-    x--;
-  }
-  console.log(str);
-  out3.innerHTML = str;
+const out3 = document.querySelector(".out-3");
+function f3() {
+  d1.unshift(input3.value);
+  showArr(d1, out3);
 }
 
-button3.onclick = t3;
+button3.onclick = f3;
+
+/////// Задача 4 ///////
+
+const button4 = document.querySelector(".b-4");
+const out4 = document.querySelector(".out-4");
+function f4() {
+  d1.shift();
+  showArr(d1, out4);
+}
+
+button4.onclick = f4;
