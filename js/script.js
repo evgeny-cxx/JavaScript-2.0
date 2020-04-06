@@ -1,71 +1,58 @@
-const a = [1, 2, 3];
-const b = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
-];
-
-//console.log(b);
-
-// for (let i = 0; i < b.length; i++) {
-//   c = b[i];
-//   for (let k = c.length - 1; k >= 0; k--) {
-//     console.log(c[k]);
-//   }
-// }
-let out = "";
-
-for (let i = 0; i < b.length; i++) {
-  out += "<br>";
-  for (let k = 0; k < b[i].length; k++) {
-    // console.log(b[i][k]);
-    out += b[i][k] + " ";
-  }
-}
-document.querySelector(".out").innerHTML = out;
-/////////////////
-
-let d = ["X", 0, 0, 0, 0, 0];
-let k = 0;
-let j = d.length - 1;
-document.querySelector(".out-arr").innerHTML = d.join(" ");
-
-document.querySelector(".but-arr").onclick = () => {
-  if (k < j) {
-    d[k] = 0;
-    d[k + 1] = "X";
-    k++;
-  } else {
-    d[j] = 0;
-    d[j - 1] = "X";
-    j--;
-  }
-  if (j == 0) {
-    k = 0;
-    j = d.length - 1;
-  }
-  document.querySelector(".out-arr").innerHTML = d.join(" ");
+const a = {
+  a: 5,
+  b: "hello",
+  z2: "Hi",
 };
 
-///// Задача 1 /////
+a.yy = 5555;
+a.b = 77;
+delete a.z2;
+console.log(a);
 
-const input = document.querySelector(".in-1");
-const button = document.querySelector(".b-1");
-const output = document.querySelector(".out-1");
+let k = "z2";
+console.log(a[k]);
 
-function isNum(element, index, arr) {
-  if (element == 55) {
-    return element;
-  } else {
-    return false;
-  }
+let out = "";
+for (let key in a) {
+  out += `${key} -- ${a[key]} <br>`;
 }
+
+document.querySelector(".out").innerHTML = out;
+
+////// Задача 1 ////////
+let a1 = {
+  one: 15,
+  two: 16,
+  five: 20,
+};
 
 function f1() {
-  const str = input.value;
-  const arr = str.split(",");
-  output.innerHTML = arr.find(isNum);
-  console.log(arr.find(isNum));
+  let out = "";
+  for (let key in a1) {
+    if (key == "two") {
+      out += a1[key];
+    }
+  }
+  return (document.querySelector(".out-1").innerHTML = out);
 }
 
-button.onclick = f1;
+document.querySelector(".b-1").onclick = f1;
+
+////// Задача 2 ////////
+let a2 = {
+  one: "hello",
+  two: "mahai",
+  five: "hi",
+};
+
+function f2() {
+  let out = "";
+  for (let key in a2) {
+    if (a2[key] == "hi") {
+      out += a2[key];
+    }
+  }
+  return (document.querySelector(".out-2").innerHTML = out);
+}
+
+document.querySelector(".b-2").onclick = f2;
