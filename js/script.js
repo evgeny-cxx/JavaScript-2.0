@@ -1,70 +1,67 @@
-let a = "hello, hi, word";
-console.log(a.split(","));
-
-let b = [8, 9, 7];
-console.log(b.join("-"));
-
-b.forEach(function (item, index) {
-  console.log(item);
-  console.log(index);
-  console.log("--");
-});
-
-//////// Задача 1 ///////////
-const a1 = [4, 5, 6, 7, 12, 34, 56, 78, 90, 11];
-
-const t1 = () => {
-  const a1_res = [];
-  a1.forEach((item, index) => {
-    a1_res[index] = item * 2;
-  });
-  console.log(a1_res);
+document.querySelector(".one").onclick = (event) => {
+  console.log(event);
+  console.log("click");
+};
+document.querySelector(".two").ondblclick = () => {
+  console.log("double");
+};
+document.querySelector(".two").oncontextmenu = () => {
+  console.log("right button");
+  return false; // не будет контекстное меню
 };
 
-t1();
-
-//////// Задача 2 ///////////
-const a2 = [2, 3, 4, 5, 10, 11, 12];
-
-const t2 = () => {
-  const a2_res = [];
-  a2.forEach((item, index) => {
-    a2_res[index] = item / 2;
-  });
-  console.log(a2_res);
+let w = 75;
+document.querySelector(".three").onmousemove = () => {
+  document.querySelector(".three").style.width = w + "px";
+  w++;
 };
 
-t2();
-
-//////// Задача 3 ///////////
-const a3 = [2, "hello", 3, "hi", 4, "Mazai"];
-
-const t3 = () => {
-  const a3_res = [];
-  a3.forEach((item, index) => {
-    if (item === +item) a3_res[index] = item / 2;
-  });
-  console.log(a3_res);
+document.querySelector(".three").onmouseenter = () => {
+  document.querySelector(".three").style.background = "red";
+  console.log("1");
 };
 
-t3();
-
-//////// Задача 3 ///////////
-const a4 = "hello world and rossony";
-
-const t4 = () => {
-  let a4Arr = a4.split(" ");
-  let arrOut = [];
-  console.log(a4Arr);
-  for (let item of a4Arr) {
-    let x = "";
-    x += item[0].toUpperCase();
-    for (let i = 1; i < item.length; i++) {
-      x += item[i];
-    }
-    arrOut += x + " ";
-  }
-  console.log(arrOut);
+document.querySelector(".three").onmouseleave = () => {
+  document.querySelector(".three").style.background = "green";
+  console.log("2");
 };
 
-t4();
+document.querySelector(".three").onmousedown = () => {
+  document.querySelector(".three").style.background = "orange";
+  console.log("3");
+};
+
+document.querySelector(".three").onmouseup = () => {
+  document.querySelector(".three").style.background = "blue";
+  console.log("4");
+};
+
+let p = 10;
+document.querySelector("button").onclick = () => {
+  p++;
+  document.querySelector("progress").value = p;
+};
+
+///// Задача 1 /////////
+
+document.querySelector(".div-1").onclick = () => {
+  document.querySelector(".out-1").innerHTML = document.querySelector(
+    ".div-1"
+  ).innerHTML;
+};
+
+///// Задача 2 /////////
+
+document.querySelector(".div-2").ondblclick = (event) => {
+  console.log(event.altKey);
+  document.querySelector(".out-2").innerHTML = "key alt press: " + event.altKey;
+};
+
+///// Задача 3 /////////
+let wdt = 75;
+document.querySelector(".div-3").onclick = () => {
+  document.querySelector(".div-3").style.width = wdt + "px";
+  wdt += 5;
+  document.querySelector(".out-3").innerHTML = "ширина: " + wdt;
+  console.log(wdt);
+};
