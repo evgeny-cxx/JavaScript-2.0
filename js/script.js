@@ -1,43 +1,70 @@
-let a = [4, 5, 12, 200, 1, 0, -2];
+let a = "hello, hi, word";
+console.log(a.split(","));
 
-let b = a.map((item, index) => {
-  // console.log(item);
-  return item * 5;
+let b = [8, 9, 7];
+console.log(b.join("-"));
+
+b.forEach(function (item, index) {
+  console.log(item);
+  console.log(index);
+  console.log("--");
 });
 
-console.log(b);
-
-let c = a.filter((item) => (item > 0 ? true : false));
-console.log(c);
-
-/////// Задача 1 ////////////
+//////// Задача 1 ///////////
 const a1 = [4, 5, 6, 7, 12, 34, 56, 78, 90, 11];
-console.log(a1);
-const f1 = () => {
-  let a1_res = a1.map((item) => item * 2);
+
+const t1 = () => {
+  const a1_res = [];
+  a1.forEach((item, index) => {
+    a1_res[index] = item * 2;
+  });
   console.log(a1_res);
 };
 
-f1();
+t1();
 
-/////// Задача 2 ////////////
+//////// Задача 2 ///////////
 const a2 = [2, 3, 4, 5, 10, 11, 12];
-console.log(a2);
-const f2 = () => {
-  let a2_res = a2.map((item) => item ** 2);
+
+const t2 = () => {
+  const a2_res = [];
+  a2.forEach((item, index) => {
+    a2_res[index] = item / 2;
+  });
   console.log(a2_res);
 };
 
-f2();
+t2();
 
-/////// Задача 3 ////////////
-const a3 = [4, "3", 6, 7, "12", 34, "56", 78, 90, 11];
-console.log(a3);
-const f3 = () => {
-  let a3_res = a3.filter((item) => {
-    if (item === +item) return item;
+//////// Задача 3 ///////////
+const a3 = [2, "hello", 3, "hi", 4, "Mazai"];
+
+const t3 = () => {
+  const a3_res = [];
+  a3.forEach((item, index) => {
+    if (item === +item) a3_res[index] = item / 2;
   });
   console.log(a3_res);
 };
 
-f3();
+t3();
+
+//////// Задача 3 ///////////
+const a4 = "hello world and rossony";
+
+const t4 = () => {
+  let a4Arr = a4.split(" ");
+  let arrOut = [];
+  console.log(a4Arr);
+  for (let item of a4Arr) {
+    let x = "";
+    x += item[0].toUpperCase();
+    for (let i = 1; i < item.length; i++) {
+      x += item[i];
+    }
+    arrOut += x + " ";
+  }
+  console.log(arrOut);
+};
+
+t4();
