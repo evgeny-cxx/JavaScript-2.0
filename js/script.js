@@ -1,47 +1,43 @@
-////// Задача 1 //////////
-const a1 = [1, 2, 3, 4, 5];
+let a = [4, 5, 12, 200, 1, 0, -2];
 
-const but1 = document.querySelector(".b-1");
-const out1 = document.querySelector(".out-1");
+let b = a.map((item, index) => {
+  // console.log(item);
+  return item * 5;
+});
 
+console.log(b);
+
+let c = a.filter((item) => (item > 0 ? true : false));
+console.log(c);
+
+/////// Задача 1 ////////////
+const a1 = [4, 5, 6, 7, 12, 34, 56, 78, 90, 11];
+console.log(a1);
 const f1 = () => {
-  let str = "";
-  for (let i = 0; i < a1.length; i++) {
-    str += a1[i] + " ";
-  }
-  console.log(str);
-  out1.textContent = str;
+  let a1_res = a1.map((item) => item * 2);
+  console.log(a1_res);
 };
 
-but1.onclick = f1;
+f1();
 
-////// Задача 2 //////////
-
-const but2 = document.querySelector(".b-2");
-const out2 = document.querySelector(".out-2");
-
+/////// Задача 2 ////////////
+const a2 = [2, 3, 4, 5, 10, 11, 12];
+console.log(a2);
 const f2 = () => {
-  let str = "";
-  for (let i in a1) {
-    str += i + ":" + a1[i] + " " + "<br>";
-  }
-  console.log(str);
-  out2.innerHTML = str;
+  let a2_res = a2.map((item) => item ** 2);
+  console.log(a2_res);
 };
 
-but2.onclick = f2;
+f2();
 
-////// Задача 3 //////////
-
-const but3 = document.querySelector(".b-3");
-const out3 = document.querySelector(".out-3");
-let item = document.getElementsByClassName("out-3");
-
+/////// Задача 3 ////////////
+const a3 = [4, "3", 6, 7, "12", 34, "56", 78, 90, 11];
+console.log(a3);
 const f3 = () => {
-  console.log(item);
-  for (let i of item) {
-    i.textContent = 3;
-  }
+  let a3_res = a3.filter((item) => {
+    if (item === +item) return item;
+  });
+  console.log(a3_res);
 };
 
-but3.onclick = f3;
+f3();
