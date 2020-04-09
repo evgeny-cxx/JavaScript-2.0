@@ -1,10 +1,11 @@
-body {
+.conteiner {
   font-family: "Roboto", sans-serif;
   display: block;
   text-align: center;
   /* background: linear-gradient(45deg, #eecfba, #c5dde8); */
 }
 
+/* 
 .i-1 {
   font-size: larger;
   background: rgb(228, 228, 228);
@@ -19,9 +20,15 @@ body {
     border-radius: 10px;
 } */
 
-.b-1 {
+.but {
   font-size: larger;
   /* background: rgb(228, 228, 228); */
-  margin: 100px 0;
   /* width: 200px; */
+  margin: 5px 0;
+  font-family: "Roboto", sans-serif;
+}
+
+div {
+  margin: 10px 0;
+  font-family: "Roboto", sans-serif;
 }
