@@ -1,33 +1,59 @@
-/////// 1 ////////
-document.querySelector(".block-1").addEventListener("touchstart", handleStart);
+// window.addEventListener("storage", function (event) {
+//   console.log("change");
+//   document.querySelector(".out-1").textContent = localStorage.getItem("b1");
+// });
 
-function handleStart(event) {
-  console.log("+");
-  console.log(event);
-  document.querySelector(".out-1").textContent += "touch" + " ";
-}
+// localStorage.setItem("data", 5);
+// console.log(localStorage.getItem("data"));
 
-/////// 2 ////////
-document.querySelector(".block-2").addEventListener("touchstart", handleStart2);
-let x = 0;
-function handleStart2(event) {
-  console.log("+");
-  console.log(event);
-  x += +event.touches.length;
-  console.log(x);
-  document.querySelector(".out-2").innerHTML = x;
-}
-/////// 3 ////////
-document
-  .querySelector(".block-3_1")
-  .addEventListener("touchstart", handleStart3);
+// const a = [3, 4, 5];
+// localStorage.setItem("a", JSON.stringify(a));
+// let b = localStorage.getItem("a");
+// b = JSON.parse(b);
+// console.log(b);
+// console.log(b[1]);
+// console.log(typeof b);
 
-document
-  .querySelector(".block-3_2")
-  .addEventListener("touchstart", handleStart3);
+// const c = {
+//   hello: 5,
+//   7: 8,
+//   6: "hi",
+// };
+// localStorage.setItem("c", JSON.stringify(c));
+// let d = localStorage.getItem("c");
+// d = JSON.parse(d);
+// console.log(d);
+// console.log(typeof d);
 
-function handleStart3(event) {
-  console.log("+");
-  console.log(event);
-  document.querySelector(".out-3").textContent = event.target.outerText;
-}
+///////// 1 ////////////
+
+const t1 = () => {
+  localStorage.setItem("5", 11);
+  console.log(localStorage.getItem("5"));
+};
+document.querySelector(".b-1").onclick = t1;
+
+///////// 2 ////////////
+const a2 = [7, 6, 5];
+
+const t2 = () => {
+  localStorage.setItem("a2", JSON.stringify(a2));
+  let g = localStorage.getItem("a2");
+  g = JSON.parse(g);
+  console.log(g);
+};
+document.querySelector(".b-2").onclick = t2;
+
+///////// 3 ////////////
+
+const t3 = () => {
+  let g = localStorage.getItem("a2");
+  g = JSON.parse(g);
+  console.log(g);
+  let out = "";
+  for (let i = 0; i < g.length; i++) {
+    out += i + ": " + g[i] + " <br>";
+  }
+  document.querySelector(".out-3").innerHTML = out;
+};
+document.querySelector(".b-3").onclick = t3;
