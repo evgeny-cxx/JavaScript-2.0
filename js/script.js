@@ -1,29 +1,23 @@
-let xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
-  if (this.readyState == 4 && this.status == 200) {
-    myFunc(data);
-  }
-};
+// fetch("http://getpost.itgid.info/index2.php")
+//   .then((data) => data.text())
+//   .then((data) => {
+//     console.log(data);
+//   });
 
-xhttp.open(
-  "GET",
-  "http://getpost.itgid.info/index2.php?auth = !!!KEY_CODE&action=1", /// auth = !!!KEY_CODE - curent code auth!!
-  true
-);
-xhttp.send();
-
-function myFunc(data) {
-  console.log(data);
-}
-
-let xhttp2 = new XMLHttpRequest();
-
-xhttp2.onreadystatechange = function () {
-  if (this.readyState == 4 && this.status == 200) {
-    myFunc2(data);
-  }
-};
-
-xhttp2.open("POST", "http://getpost.itgid.info/index2.php", true);
-xhttp2.setRequestHeader("Contetn-type", "aplication/x-www-form-urlecoded");
-xhttp2.send("auth = !!!KEY_CODE&action =1");
+fetch("http://getpost.itgid.info/index2.php", {
+  method: "POST", // *GET, POST, PUT, DELETE, etc.
+  mode: "cors", // no-cors, *cors, same-origin
+  cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+  credentials: "same-origin", // include, *same-origin, omit
+  headers: {
+    "Content-Type": "application/json",
+    // 'Content-Type': 'application/x-www-form-urlencoded',
+  },
+  redirect: "follow", // manual, *follow, error
+  referrerPolicy: "no-referrer", // no-referrer, *client
+  body: "!!!aut_key_code&action=1", // body data type must match "Content-Type" header
+})
+  .then((response) => response.text())
+  .then((response) => {
+    console.log(response);
+  });
