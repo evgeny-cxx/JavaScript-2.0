@@ -1,16 +1,26 @@
-let m = new Alert("hello", "alert-dark", ".out-1");
-m.showAlert();
+let user = {
+  username: "Ivan",
+  _password: "",
+  set password(pass) {
+    this._password = pass.trim(); // убирает пробелы вокруг пароля
+  },
+  get password() {
+    return this.password;
+  },
+};
 
-let v = new Alert("good", "alert-info", ".out-2");
-v.showAlert();
+user.password = " hello ";
+console.log(user);
 
-let i = new Alert2("pp", "alert-success", ".out-3", "pets");
-i.showIconAlert();
+// let user2 = {
+//   username: "Ivan",
+//   password: "qwerty",
+// };
 
-const name = document.querySelector(".package-name");
-const count = document.querySelector(".disclaimer");
-const price = document.querySelector(".price");
+let user2 = {};
+user2.__proto__ = user;
 
-let goods = new Goods("YourPhone", 5, "phone", 1000);
-console.log(goods);
-goods.draw();
+// console.log(user);
+console.log(user2);
+user2.password = "   123  334   ";
+// console.log(user.username);
