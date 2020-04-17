@@ -8,12 +8,12 @@
 // let firstStudent = new Student(a, b, '123');
 // console.log(firstStudent);
 
-let but = new Button(100, 50, 'red', 'push');
+let but = new Button(100, 50, "red", "push");
 
 console.log(but);
 
 document.body.append(but.render());
 console.log(but.render());
-let modBut = new ModernButton(100, 50, 'yellow', 'modd', 20);
+let modBut = new ModernButton(100, 50, "yellow", "modd", 15.6);
 console.log(modBut.render());
 document.body.append(modBut.render());
