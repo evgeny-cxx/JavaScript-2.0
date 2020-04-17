@@ -1,35 +1,19 @@
-let a = {
-    'text': 'Hello',
-    'color': 'red',
-    'bold': true,
-    'show': function () {
-        console.log(this.color);
-    }
-};
+// let a = 'Ivan';
+// let b = '7773333';
 
-let b = {
-    'fontSize': '24px',
-    __proto__: a
-}
+// const person = new User(a, b);
+// console.log(person);
+// console.log(person.validatePassword());
 
-// console.log(a);
-// console.log(b);
-// b.text = 'one';
+// let firstStudent = new Student(a, b, '123');
+// console.log(firstStudent);
 
-// console.log(b.text);
-// console.log(a.text);
+let but = new Button(100, 50, 'red', 'push');
 
-// b.color = 'green'; //если не присваивать цвет, то наследует от родителя а!!
-// b.show();
+console.log(but);
 
-// let c = {
-//     'fontFamily': 'Roboto',
-//     __proto__: b
-// }
-
-// console.log(c);
-// console.log(c.bold);
-
-///////// 1 /////////////
-
-// app, cpu, memory obj/
+document.body.append(but.render());
+console.log(but.render());
+let modBut = new ModernButton(100, 50, 'yellow', 'modd', 20);
+console.log(modBut.render());
+document.body.append(modBut.render());
